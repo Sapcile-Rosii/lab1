@@ -130,7 +130,7 @@
         <executions>
           <execution>
             <goals>
-              <goal>java</goal>git 
+              <goal>java</goal>
             </goals>
           </execution>
         </executions>
