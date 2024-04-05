@@ -127,7 +127,7 @@ class PaymentServiceTest {
     @Test
     @Order(10)
     @DisplayName("BVA Test 2")
-    void addValidPaymentTestBVA2() {
+    void addInvalidPaymentBVA() {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
             service.addPayment(9, PaymentType.CARD, 33.3);
         }, "Expected addPayment to throw, but it didn't");
@@ -138,7 +138,7 @@ class PaymentServiceTest {
     @Test
     @Order(11)
     @DisplayName("BVA Test 3")
-    void addValidPaymentTestBVA3() {
+    void addInvalidPaymentBVA2() {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
             service.addPayment(0, PaymentType.CARD, 33.3);
         }, "Expected addPayment to throw, but it didn't");
@@ -150,7 +150,7 @@ class PaymentServiceTest {
     @Order(12)
     @DisplayName("BVA Test 4")
     @EnabledOnOs(OS.WINDOWS)
-    void addInvalidPaymentBVA() {
+    void addValidPaymentTestBVA2() {
         service.addPayment(5, PaymentType.CARD, 450.65);
 
         assertEquals(1, service.getPayments().size());
@@ -160,7 +160,7 @@ class PaymentServiceTest {
     @Order(13)
     @DisplayName("BVA Test 5")
     @EnabledOnOs(OS.WINDOWS)
-    void addInvalidPaymentBVA2() {
+    void addInvalidPaymentBVA3() {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
             service.addPayment(5, PaymentType.CARD, 0);
         }, "Expected addPayment to throw, but it didn't");
@@ -173,7 +173,7 @@ class PaymentServiceTest {
     @Order(14)
     @DisplayName("BVA Test 6")
     @EnabledOnOs(OS.WINDOWS)
-    void addInvalidPaymentBVA3() {
+    void addInvalidPaymentBVA4() {
 
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
             service.addPayment(5, PaymentType.CARD, 1000.1);
