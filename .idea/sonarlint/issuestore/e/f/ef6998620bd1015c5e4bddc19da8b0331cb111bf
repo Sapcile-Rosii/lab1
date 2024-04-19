@@ -1,8 +1,8 @@
 
 
-java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦8şïŞ˜æ1J$5191bd01-5c09-4ad0-aa0d-f83957477888
+java:S2095H"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ù»ı8¾Øõ›ï1J$43ecce4b-4a33-4d1c-8c17-606b9c686e4d
 
-java:S2095?"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ù»ı8şïŞ˜æ1J$daed3283-ac27-44e6-9423-6cc16111afc4
-~	java:S125"<This block of commented-out lines of code should be removed.(Èú’’8„ğŞ˜æ1J$7f06a375-5342-41c4-beea-cb37014a8cc4
-~	java:S125:"<This block of commented-out lines of code should be removed.(Èú’’8‰ğŞ˜æ1J$aae11b8b-ad4e-4b15-845a-2993ad018170
-r	java:S106A"+Replace this use of System.out by a logger.(Ñ£±Ôúÿÿÿÿ8‹ğŞ˜æ1J$736363d7-b751-493b-8651-22f9b9c104d6
+java:S2095""LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦8¾Øõ›ï1J$426f9332-9161-4e79-8b8d-da350f79b332
+~	java:S125"<This block of commented-out lines of code should be removed.(Èú’’8ÃØõ›ï1J$997e8341-cfa5-435e-a6d0-491038a1d0a4
+~	java:S125C"<This block of commented-out lines of code should be removed.(Èú’’8ÈØõ›ï1J$98f13dcd-ffe2-4baa-83d7-391add774fda
+r	java:S106J"+Replace this use of System.out by a logger.(Ñ£±Ôúÿÿÿÿ8ÊØõ›ï1J$cec1478f-1e2c-4f5c-bb7c-8f0d93c4114e
