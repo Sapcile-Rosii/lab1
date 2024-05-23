@@ -17,15 +17,6 @@ public class PaymentRepository {
         readPayments();
     }
 
-    public PaymentRepository(boolean initializeEmpty) {
-        if (initializeEmpty) {
-            this.paymentList = new ArrayList<>();
-        } else {
-            this.paymentList = null;
-        }
-        readPayments();
-    }
-
     private void readPayments(){
         //ClassLoader classLoader = PaymentRepository.class.getClassLoader();
         File file = new File(filename);
@@ -35,9 +26,13 @@ public class PaymentRepository {
             String line = null;
             while((line=br.readLine())!=null){
                 Payment payment=getPayment(line);
-                paymentList.add(payment);
+                if(payment!=null) {
+                    paymentList.add(payment);
+                }
             }
             br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

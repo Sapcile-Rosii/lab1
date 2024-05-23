@@ -30,7 +30,7 @@ class PaymentServiceTest {
     @Test
     @Order(1)
     @DisplayName("EC Test 1")
-    @Disabled
+   // @Disabled
     void addValidPaymentTest() {
         service.addPayment(1, PaymentType.CARD, 200.5);
 
