@@ -79,3 +79,5 @@ y
 Isrc/test/java/pizzashop/service/integration/step3/PaymentServiceTest.java,2\0\2072861d91831f03499f6512dc96528589453d49
 N
 src/test/java/module-info.java,9\4\9424c03a1087f4174488c49e19ca2a9e10d4629e
+u
+Esrc/test/java/pizzashop/service/PaymentServiceTestGetTotalAmount.java,b\d\bd36f09dd4c486007ca0201d8075e9c9b99c437c
