@@ -13,4 +13,6 @@ module pizzashop {
 
     exports pizzashop.repository;
     exports pizzashop.service;
+    opens pizzashop.service;
+    opens pizzashop.repository;
 }
