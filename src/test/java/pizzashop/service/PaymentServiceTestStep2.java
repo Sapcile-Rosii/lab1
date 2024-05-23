@@ -1,59 +1,53 @@
-package pizzashop.service.integration.step1;
+package pizzashop.service;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import pizzashop.model.Payment;
 import pizzashop.model.PaymentType;
-import pizzashop.repository.MenuRepository;
 import pizzashop.repository.PaymentRepository;
 import pizzashop.service.PaymentService;
 import pizzashop.validator.PaymentValidator;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class PaymentServiceTest {
+class PaymentServiceTestStep2 {
 
-    @Mock
     PaymentRepository payRepo;
 
-    @InjectMocks
     PaymentService service;
 
-    private List<Payment> payments;
+    PaymentValidator val;
 
     @BeforeEach
     void setUp() {
-        payments=new ArrayList<>();
-        when(payRepo.getAll()).thenReturn(payments);
+        payRepo=new PaymentRepository();
+        val = new PaymentValidator();
+        service=new PaymentService(null,payRepo,val);
+    }
+
+    @AfterEach
+    void tearDown() {
+        payRepo.getAll().clear();
+        payRepo.writeAll();
     }
 
     @Test
     void getPayments() {
         List<Payment> result=service.getPayments();
         assertEquals(0,result.size());
-        verify(payRepo,times(1)).getAll();
     }
 
     @Test
     void addPayment() {
         Payment payment=new Payment(3,PaymentType.CASH,3);
-        doAnswer((invocation)->{
-            payments.add(payment);
-            return null;
-        }).when(payRepo).add(any(Payment.class));
 
         service.addPayment(payment.getTableNumber(),payment.getType(),payment.getAmount());
-        verify(payRepo,times(1)).add(any());
 
         List<Payment> result=service.getPayments();
         assertEquals(1,result.size());

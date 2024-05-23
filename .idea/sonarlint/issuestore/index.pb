@@ -81,3 +81,23 @@ N
 src/test/java/module-info.java,9\4\9424c03a1087f4174488c49e19ca2a9e10d4629e
 u
 Esrc/test/java/pizzashop/service/PaymentServiceTestGetTotalAmount.java,b\d\bd36f09dd4c486007ca0201d8075e9c9b99c437c
+Å
+Qsrc/test/java/pizzashop/service/integration/step1/PaymentRepositoryTestStep1.java,e\3\e3633cff1181d462d1c46b7f29897ceb95d242ee
+~
+Nsrc/test/java/pizzashop/service/integration/step1/PaymentServiceTestStep1.java,e\2\e28bf6fbce88c8cc26554e73059e818a4a126fcf
+w
+Gsrc/test/java/pizzashop/service/integration/step1/PaymentTestStep1.java,a\a\aa0074a72a3b7756d2c997faa4f7591f7bb2017b
+~
+Nsrc/test/java/pizzashop/service/integration/step2/PaymentServiceTestStep2.java,1\c\1c358c5ff73e7c4cbd89be27a1f79d54fd9351b5
+~
+Nsrc/test/java/pizzashop/service/integration/step3/PaymentServiceTestStep3.java,7\f\7f2aa25af0900de91bffd7212d17b8e855f02319
+o
+?src/test/java/pizzashop/service/PaymentRepositoryTestStep1.java,4\c\4c4e5e85d18cdf3fc95d1ff16185954c942ce826
+l
+<src/test/java/pizzashop/service/PaymentServiceTestStep1.java,5\3\53b6c6fedb857270361f0ef2d2805afd2c2374de
+e
+5src/test/java/pizzashop/service/PaymentTestStep1.java,6\7\67af24b3cdf2b53a28fa225fc6ea7a97faf456ff
+l
+<src/test/java/pizzashop/service/PaymentServiceTestStep2.java,a\4\a47c289f9fbc06f62b1fc03e7fa02cdd059643c5
+l
+<src/test/java/pizzashop/service/PaymentServiceTestStep3.java,6\6\66f1bb3ac8d2538761b0deecad838ceead3d1f93

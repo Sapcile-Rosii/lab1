@@ -1,4 +1,4 @@
-package pizzashop.service.integration.step3;
+package pizzashop.service;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +16,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-class PaymentServiceTest {
+class PaymentServiceTestStep3 {
 
     PaymentRepository payRepo;
 

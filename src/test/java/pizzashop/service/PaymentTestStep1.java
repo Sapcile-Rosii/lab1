@@ -1,4 +1,4 @@
-package pizzashop.service.integration.step1;
+package pizzashop.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,7 @@ import pizzashop.model.PaymentType;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PaymentTest {
+class PaymentTestStep1 {
 
     Payment payment;
     @BeforeEach

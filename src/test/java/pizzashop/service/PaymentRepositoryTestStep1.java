@@ -1,4 +1,4 @@
-package pizzashop.service.integration.step1;
+package pizzashop.service;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +16,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class PaymentRepositoryTest {
+class PaymentRepositoryTestStep1 {
 
     PaymentRepository repository;
 
