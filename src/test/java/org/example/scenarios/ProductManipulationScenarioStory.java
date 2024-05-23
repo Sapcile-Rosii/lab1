@@ -10,43 +10,58 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom("features.login/test_data.csv")
+@UseTestDataFrom("org/example/scenarios/data.csv")
 public class ProductManipulationScenarioStory {
 
     @Managed(uniqueSession = true, driver = "firefox")
-    WebDriver driver;
+    public WebDriver webdriver;
 
     @Steps
-    EndUserSteps user;
+    public EndUserSteps userSteps;
+
+    public String searchKeyword;
+    public String firstSearchResultText;
+    public Integer reviewStars;
+    public String reviewNickname;
+    public String reviewSummary;
+    public String reviewTextBlock;
+
+    static public String ADDED_TO_SHOPPING_CART_MESSAGE_TEMPLATE = "You added ? to your shopping cart.";
+    static public String EMPTY_CART_MESSAGE = "You have no items in your shopping cart.";
+    static public String REVIEW_SUBMITTED_FOR_MODERATION_MESSAGE = "You submitted your review for moderation.";
 
     @Test
-    public void test_login() {
-        user.opens_home_page();
-        user.logs_in("validUsername", "validPassword");
-        user.should_see_account_overview();
+    public void searching_and_manipulating_product() {
+        searching_by_text_should_display_first_product();
+        opens_first_product_and_adds_to_cart_should_display_success();
+        removes_from_cart_should_display_empty_cart();
+        adds_a_review_should_display_success();
     }
 
-    @Test
-    public void test_open_new_account() {
-        user.opens_home_page();
-        user.logs_in("validUsername", "validPassword");
-        user.open_new_account();
+    public void searching_by_text_should_display_first_product() {
+        userSteps.opens_the_home_page();
+        userSteps.types_in_search_field_and_presses_enter(searchKeyword);
+        userSteps.should_see_text_as_first_search_result(firstSearchResultText);
     }
 
-    @Test
-    public void test_transfer_funds() {
-        user.opens_home_page();
-        user.logs_in("validUsername", "validPassword");
-        user.transfer_funds("100", "12345", "67890");
-        user.should_see_transfer_confirmation();
+    public void opens_first_product_and_adds_to_cart_should_display_success() {
+        userSteps.opens_the_first_search_result();
+        userSteps.clicks_on_first_size();
+        userSteps.clicks_on_first_color();
+        userSteps.clicks_on_add_to_cart();
     }
 
-    @Test
-    public void test_scenario_based_testing() {
-        user.opens_home_page();
-        user.logs_in("validUsername", "validPassword");
-        user.open_new_account();
-        user.transfer_funds("100", "12345", "67890");
-        user.should_see_transfer_confirmation();
+    public void removes_from_cart_should_display_empty_cart() {
+        userSteps.clicks_on_cart();
+        userSteps.clicks_on_first_remove_from_cart();
+        userSteps.clicks_on_confirm_remove_from_cart();
+    }
+
+    public void adds_a_review_should_display_success() {
+        userSteps.clicks_on_add_review();
+        userSteps.clicks_on_review_stars(reviewStars);
+        userSteps.types_in_review_nickname_field(reviewNickname);
+        userSteps.types_in_review_summary_field(reviewSummary);
+        userSteps.types_in_review_text_block_field(reviewTextBlock);
     }
 }
